@@ -91,7 +91,7 @@ export function BookingManagementDialog({
 
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[calc(100vw-32px)] md:max-w-[425px] w-full p-4 md:p-6">
+      <DialogContent className="sm:max-w-125 md:max-w-106.25 max-h-[90vh] overflow-y-auto">
         <DialogHeader className="text-left">
           <DialogTitle>Detalle de la Reserva</DialogTitle>
           <DialogDescription>

@@ -147,7 +147,7 @@ export function NewBookingModal({
               id="notes"
               {...register('notes')}
               placeholder="Notas adicionales sobre la reserva..."
-              className="resize-none min-h-[80px]"
+              className="resize-none min-h-20"
             />
           </div>
 

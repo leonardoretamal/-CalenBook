@@ -19,7 +19,7 @@ export default async function BookingsPage() {
   // Fetch schedules for the manual booking modal and calendar view
   const { data: schedules } = await supabase
     .from('schedules')
-    .select('id, name')
+    .select('id, name, is_active')
     .eq('owner_id', user?.id)
     .eq('is_active', true);
 
@@ -27,7 +27,6 @@ export default async function BookingsPage() {
     <BookingsClient
       initialBookings={bookings || []}
       schedules={schedules || []}
-      user={user}
     />
   );
 }

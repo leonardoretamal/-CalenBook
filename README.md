@@ -31,7 +31,7 @@
 1. **Instalar dependencias**: `npm install`
 2. **Configurar entorno**: Renombrar `.env.example` en `apps/web/` a `.env` y completar las llaves (ver [GUIA_DESARROLLADOR.md](docs/GUIA_DESARROLLADOR.md)).
 3. **Ejecutar**: `npm run dev`
-4. **Despliegue**: Seguir la [Guía de Despliegue (Vercel & Google)](docs/GUIA_DESPLIEGUE_VERCEL.md).
+4. **Despliegue**: Seguir la [Guía de Despliegue (Vercel & Google)](docs/GUIA_DESPLIEGUE_VERCEL_GOOGLE.md).
 
 ---
 

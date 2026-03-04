@@ -27,11 +27,19 @@ Al conectar Vercel con GitHub, obtienes **CI/CD nativo**: cada vez que hagas `gi
 1. Ve a [vercel.com](https://vercel.com) e importa tu repositorio de GitHub.
 2. **Framework Preset**: Selecciona **Next.js**.
 3. **Root Directory**: Selecciona la carpeta `apps/web`.
-4. **Environment Variables**: Añade todas las llaves necesarias (ver [GUIA_DESARROLLADOR.md](GUIA_DESARROLLADOR.md)):
-   - `NEXT_PUBLIC_APP_URL`: Tu URL final (ej. `https://mi-calendario.vercel.app`).
-   - `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`.
-   - `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`.
-   - `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`.
+4. **Environment Variables**: Añade todas las llaves necesarias en la sección "Settings > Environment Variables" de tu proyecto en Vercel:
+   - `NEXT_PUBLIC_APP_URL`: Tu URL final de producción (ej. `https://mi-calendario.vercel.app`). **IMPORTANTE**: No debe terminar en `/`.
+   - `NEXT_PUBLIC_OWNER_NAME`: El nombre que aparecerá en la cabecera y perfiles (ej. `Tattoos Brian`).
+   - `NEXT_PUBLIC_TIMEZONE`: La zona horaria por defecto para las citas (ej. `America/Santiago`).
+   - `NEXT_PUBLIC_SUPABASE_URL`: URL de tu proyecto Supabase.
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`: Llave pública anónima de Supabase.
+   - `SUPABASE_SERVICE_ROLE_KEY`: Llave secreta de rol de servicio (solo servidores).
+   - `GOOGLE_CLIENT_ID`: ID de cliente de Google Cloud.
+   - `GOOGLE_CLIENT_SECRET`: Secreto de cliente de Google Cloud.
+   - `SMTP_HOST`: Servidor SMTP (ej. `smtp.gmail.com`).
+   - `SMTP_PORT`: Puerto SMTP (ej. `465`).
+   - `SMTP_USER`: Tu correo emisor.
+   - `SMTP_PASS`: Tu contraseña de aplicación (App Password).
 
 ## 3. Ajustes de Redirect URIs (CRÍTICO)
 
