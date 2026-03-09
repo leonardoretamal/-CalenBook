@@ -155,7 +155,7 @@ export function BookingForm({
               id="notes"
               placeholder="¿Hay algo que debamos saber antes de la cita?"
               {...register('notes')}
-              className="resize-y min-h-[80px]"
+              className="resize-y min-h-20"
             />
           </div>
         </CardContent>
@@ -177,9 +177,6 @@ export function BookingForm({
                 className="text-primary hover:underline font-medium"
                 target="_blank"
               >
-                <p className="mt-2 font-mono font-bold text-foreground bg-muted p-2 rounded text-center select-none">
-                  ELIMINAR MI CUENTA
-                </p>
                 Política de Privacidad
               </Link>
               .

@@ -92,23 +92,37 @@ export function ScheduleForm({
   };
 
   const addTimeSlot = (day: number) => {
-    const current = { ...getValues('weekly_schedule') };
+    const current = getValues('weekly_schedule');
     const dayStr = day.toString();
     if (current[dayStr]) {
-      current[dayStr] = [...current[dayStr], { start: '12:00', end: '13:00' }];
-      setValue('weekly_schedule', current, { shouldValidate: true });
+      const updatedDaySlots = [
+        ...current[dayStr],
+        { start: '12:00', end: '13:00' },
+      ];
+      setValue(
+        'weekly_schedule',
+        {
+          ...current,
+          [dayStr]: updatedDaySlots,
+        },
+        { shouldValidate: true }
+      );
     }
   };
 
   const removeTimeSlot = (day: number, index: number) => {
-    const current = { ...getValues('weekly_schedule') };
+    const current = getValues('weekly_schedule');
     const dayStr = day.toString();
     if (current[dayStr]) {
-      current[dayStr] = current[dayStr].filter((_, i) => i !== index);
-      if (current[dayStr].length === 0) {
-        delete current[dayStr];
+      const updatedDaySlots = current[dayStr].filter((_, i) => i !== index);
+      const updatedWeekly = { ...current };
+
+      if (updatedDaySlots.length === 0) {
+        delete updatedWeekly[dayStr];
+      } else {
+        updatedWeekly[dayStr] = updatedDaySlots;
       }
-      setValue('weekly_schedule', current, { shouldValidate: true });
+      setValue('weekly_schedule', updatedWeekly, { shouldValidate: true });
     }
   };
 
@@ -118,11 +132,20 @@ export function ScheduleForm({
     field: 'start' | 'end',
     value: string
   ) => {
-    const current = { ...getValues('weekly_schedule') };
+    const current = getValues('weekly_schedule');
     const dayStr = day.toString();
     if (current[dayStr] && current[dayStr][index]) {
-      current[dayStr][index][field] = value;
-      setValue('weekly_schedule', current, { shouldValidate: true });
+      const updatedDaySlots = current[dayStr].map((slot, i) =>
+        i === index ? { ...slot, [field]: value } : slot
+      );
+      setValue(
+        'weekly_schedule',
+        {
+          ...current,
+          [dayStr]: updatedDaySlots,
+        },
+        { shouldValidate: true }
+      );
     }
   };
 

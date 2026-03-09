@@ -1,6 +1,12 @@
+<!--
+  Created by: b0nfire
+  Date: 2026-03-09
+  Version: 1.0.0
+-->
+
 # 🧿 CalenBook
 
-[**Español**](#español) | [**English**](#english)
+[**Español**](#español) | [**English**](#english) | [**Security**](#security)
 
 ---
 
@@ -76,3 +82,13 @@ Para más detalles técnicos, guías de usuario o procesos de despliegue, consul
 ---
 
 Desarrollado con ❤️ para profesionales independientes. / Developed with ❤️ for independent professionals.
+
+---
+
+<a name="security"></a>
+
+## 🛡️ Seguridad / Security
+
+Si encuentras una vulnerabilidad, por favor repórtala de forma responsable enviando un correo a **[tu-email@ejemplo.com]**. Consulta nuestro [SECURITY.md](SECURITY.md) para más detalles.
+
+If you find a vulnerability, please report it responsibly by sending an email to **[your-email@example.com]**. See our [SECURITY.md](SECURITY.md) for more details.
